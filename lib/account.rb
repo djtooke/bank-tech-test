@@ -6,4 +6,7 @@ class Account
     @balance = balance
   end
 
+  def log_transaction(date, credit, debit)
+  end
+
 end
