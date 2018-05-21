@@ -7,6 +7,7 @@ class Account
   end
 
   def log_transaction(date, credit, debit)
+    @balance += credit
   end
 
 end

@@ -15,7 +15,12 @@ describe Account do
   describe 'log_transaction' do
 
     it 'should accept a date, credit and debit amount to log transactions' do
-    expect(subject).to respond_to(:log_transaction).with(3).arguments
+      expect(subject).to respond_to(:log_transaction).with(3).arguments
+    end
+
+    it 'should update the balance when adding a credit' do
+      account.log_transaction('10/01/2012', 1000, nil)
+      expect(account.balance).to eq (2000)
     end
 
   end
