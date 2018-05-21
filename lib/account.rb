@@ -10,7 +10,7 @@ class Account
   def log_transaction(date, credit, debit)
     @balance += credit.to_i
     @balance -= debit.to_i
-    Transaction.new(date, credit, debit, @balance)
+    @transactions << Transaction.new(date, credit, debit, @balance)
   end
 
 end
