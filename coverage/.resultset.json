@@ -69,6 +69,31 @@
         null,
         null
       ],
+      "/Users/daniel/Desktop/Makers/Week-10/bank-tech-test/spec/printer_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        2,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/daniel/Desktop/Makers/Week-10/bank-tech-test/lib/printer.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/daniel/Desktop/Makers/Week-10/bank-tech-test/spec/transaction_spec.rb": [
         1,
         null,
@@ -111,6 +136,6 @@
         null
       ]
     },
-    "timestamp": 1526916007
+    "timestamp": 1526932195
   }
 }
