@@ -3,6 +3,8 @@ require 'account'
 describe Account do
 
   subject(:account) {Account.new(1000)}
+  let(:Transaction) { double :Transaction }
+  let(:transaction) { double :transaction }
 
   it 'should have an accessible instance variable for balance' do
     expect(subject).to respond_to (:balance)
@@ -30,6 +32,12 @@ describe Account do
     it 'should update the balance when adding a debit' do
       account.log_transaction('10/01/2012', nil, 500)
       expect(account.balance).to eq (500)
+    end
+
+    it 'should create a Transaction object and push it to the transactions array' do
+      allow(:Transaction).to receive(:new).and_return(:transaction)
+      expect(account.transactions[0]).to eq(transaction)
+      account.log_transaction('10/01/2012', 1000, nil)
     end
 
   end
