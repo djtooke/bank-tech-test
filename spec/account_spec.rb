@@ -23,6 +23,11 @@ describe Account do
       expect(account.balance).to eq (2000)
     end
 
+    it 'should update the balance when adding a debit' do
+      account.log_transaction('10/01/2012', nil, 500)
+      expect(account.balance).to eq (500)
+    end
+
   end
 
 end
