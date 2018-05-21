@@ -74,17 +74,27 @@
         null,
         1,
         null,
-        2,
+        3,
+        3,
         null,
         1,
         1,
+        null,
+        null,
         1,
+        2,
         null,
         null,
         null
       ],
       "/Users/daniel/Desktop/Makers/Week-10/bank-tech-test/lib/printer.rb": [
         1,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
         null,
         1,
         null,
@@ -136,6 +146,6 @@
         null
       ]
     },
-    "timestamp": 1526932195
+    "timestamp": 1526933640
   }
 }
