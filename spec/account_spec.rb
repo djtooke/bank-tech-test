@@ -12,6 +12,10 @@ describe Account do
     expect(account.balance).to eq (1000)
   end
 
+  it 'should have an array to store the transactions log' do
+    expect(account.transactions).to be_instance_of Array
+  end
+
   describe 'log_transaction' do
 
     it 'should accept a date, credit and debit amount to log transactions' do
