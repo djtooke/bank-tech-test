@@ -5,7 +5,6 @@ describe Transaction do
   subject(:credit_transaction) { Transaction.new('10/01/2012', 1000.00, nil, 2000.00) }
   subject(:debit_transaction)  { Transaction.new('14/01/2012', nil, 500.00, 500.00) }
 
-
   it 'should store the transaction date' do
     expect(credit_transaction.date).to eq '10/01/2012'
   end

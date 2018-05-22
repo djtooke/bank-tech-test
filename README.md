@@ -1,6 +1,6 @@
 # Bank tech test
 
-A tech test which replicates the workings of a simple bank account. I wrote this test in object-oriented Ruby, encapsulating three classes for account, transaction, and printer. This ensures that objects have separate concerns, and can be passed into one another to pass their information up to other objects.
+A tech test which replicates the workings of a simple bank account. I wrote this test in object-oriented Ruby, encapsulating three classes for account, transaction, printer and formatter. This ensures that objects have separate concerns, and can be passed into one another to pass their information up to other objects.
 
 ### Installation
 

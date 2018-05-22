@@ -6,7 +6,7 @@ describe Account do
   let(:Transaction)        { double :Transaction }
   let(:transaction_double) { double :transaction }
 
-  before (:each) do
+  before :each do
     allow(Transaction).to receive(:new).and_return(transaction_double)
   end
 
