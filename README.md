@@ -4,19 +4,19 @@ A tech test which replicates the workings of a simple bank account. I wrote this
 
 ### Installation
 
-* You will need Ruby 2.5.0
+* You will need Ruby 2.5.0 installed
 * Clone this repository
 * Run `bundle install`
-* Open IRB or Pry, load the `account.rb` `transaction.rb` and `printer.rb` files into the console and start creating your objects!
+* Run `ruby bank_tech_test.rb` and start creating your objects!
 
 ### Usage
 
 * To create an account, create a variable set to `account.new`. You can pass in an argument with a number to initialize the account with an opening balance.
 * To check your balance, run `.balance` on your account
 * To log a transaction, use the `.log_transaction` method. You need to pass it three arguments in order: the date (as a string), a credit value, and a debit value. If crediting, you will probably want to set the debit to nil, and vice versa. For example, to input a credit of 500 on New Year's day 2018, run `.log_transaction(01/01/2018, 500, nil)` on your account variable.
-* To print your log of transactions, initialize a new printer object, passing in your account as an argument. Run `.print` on this printer and it will output a log of all the transactions made.
+* To print your log of transactions, initialize a new printer object. Run `.print` on your printer object, passing in your account as an argument, and it will output a log of all the transactions made.
 
-![screenshot](https://user-images.githubusercontent.com/35489501/40359250-eff3e6ac-5db9-11e8-846d-f0b2574c8c3c.png)
+![screenshot](https://user-images.githubusercontent.com/35489501/40368075-d6cf8c9e-5dd2-11e8-82de-bb671d26e300.png)
 
 ### Testing
 
