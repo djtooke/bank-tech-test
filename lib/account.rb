@@ -8,9 +8,15 @@ class Account
   end
 
   def log_transaction(date, credit, debit)
+    update_balance(credit, debit)
+    @transactions << Transaction.new(date, credit, debit, @balance)
+  end
+
+  private
+
+  def update_balance(credit, debit)
     @balance += credit.to_i
     @balance -= debit.to_i
-    @transactions << Transaction.new(date, credit, debit, @balance)
   end
 
 end
