@@ -9,7 +9,20 @@ attr_reader :account
 private
 
   def print_header
-    print 'date || credit || debit || balance'
+    puts 'date || credit || debit || balance'
+  end
+
+  def stringify(transaction)
+    @temp_credit = transaction.credit ? '%.2f' % transaction.credit : ""
+    @temp_debit = transaction.debit ? '%.2f' % transaction.debit : ""
+    @temp_balance = '%.2f' % transaction.balance
+  end
+
+  def print_transactions
+    @account.transactions.reverse.each do |transaction|
+      stringify(transaction)
+      puts transaction.date.to_s + " || " + @temp_credit + " || " + @temp_debit + " || " + @temp_balance
+    end
   end
 
 end
