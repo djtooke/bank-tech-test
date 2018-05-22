@@ -6,6 +6,12 @@ attr_reader :account
     @account = account
   end
 
+  def print
+    print_header
+    print_transactions
+    nil
+  end
+
 private
 
   def print_header
