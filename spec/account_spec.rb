@@ -2,8 +2,8 @@ require 'account'
 
 describe Account do
 
-  subject(:account) {Account.new(1000)}
-  let(:Transaction) { double :Transaction }
+  subject(:account)        { Account.new(1000) }
+  let(:Transaction)        { double :Transaction }
   let(:transaction_double) { double :transaction }
 
   before (:each) do
@@ -11,11 +11,11 @@ describe Account do
   end
 
   it 'should have an accessible instance variable for balance' do
-    expect(subject).to respond_to (:balance)
+    expect(subject).to respond_to :balance
   end
 
   it 'should be able to be initialized with a certain balance' do
-    expect(account.balance).to eq (1000)
+    expect(account.balance).to eq 1000
   end
 
   it 'should have an array to store the transactions log' do
@@ -30,17 +30,17 @@ describe Account do
 
     it 'should update the balance when adding a credit' do
       account.log_transaction('10/01/2012', 1000, nil)
-      expect(account.balance).to eq (2000)
+      expect(account.balance).to eq 2000
     end
 
     it 'should update the balance when adding a debit' do
       account.log_transaction('10/01/2012', nil, 500)
-      expect(account.balance).to eq (500)
+      expect(account.balance).to eq 500
     end
 
     it 'should create a Transaction object and push it to the transactions array' do
       account.log_transaction('10/01/2012', 1000, nil)
-      expect(account.transactions[0]).to eq(transaction_double)
+      expect(account.transactions[0]).to eq transaction_double
     end
 
   end

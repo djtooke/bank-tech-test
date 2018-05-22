@@ -1,6 +1,6 @@
 class Printer
 
-attr_reader :account
+  attr_reader :account
 
   def initialize(account)
     @account = account
@@ -12,7 +12,7 @@ attr_reader :account
     nil
   end
 
-private
+  private
 
   def print_header
     puts 'date || credit || debit || balance'
