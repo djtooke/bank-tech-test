@@ -5,7 +5,7 @@ class Printer
   include Formatter
 
   def print(account)
-    puts format(account.transactions)
+    puts format(account.log.history)
   end
 
 end

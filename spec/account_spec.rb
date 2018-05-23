@@ -18,31 +18,16 @@ describe Account do
     expect(account.balance).to eq 1000
   end
 
-  it 'should have an array to store the transactions log' do
-    expect(account.transactions).to be_instance_of Array
+  it 'should have a log object to store the transactions history' do
+    expect(account.log).to be_instance_of Log
   end
 
-  describe 'log_transaction' do
+  it 'should update the balance when adding a credit' do
+    expect{ account.log_transaction('10/01/2012', 1000, nil) }.to change { account.balance }.by(1000)
+  end
 
-    it 'should accept a date, credit and debit amount to log transactions' do
-      expect(subject).to respond_to(:log_transaction).with(3).arguments
-    end
-
-    it 'should update the balance when adding a credit' do
-      account.log_transaction('10/01/2012', 1000, nil)
-      expect(account.balance).to eq 2000
-    end
-
-    it 'should update the balance when adding a debit' do
-      account.log_transaction('10/01/2012', nil, 500)
-      expect(account.balance).to eq 500
-    end
-
-    it 'should create a Transaction object and push it to the transactions array' do
-      account.log_transaction('10/01/2012', 1000, nil)
-      expect(account.transactions[0]).to eq transaction_double
-    end
-
+  it 'should update the balance when adding a debit' do
+    expect{ account.log_transaction('14/01/2012', nil, 500) }.to change { account.balance }.by(-500)
   end
 
 end

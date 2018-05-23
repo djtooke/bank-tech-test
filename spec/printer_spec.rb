@@ -3,13 +3,15 @@ require 'printer'
 describe Printer do
 
   let(:account)       { double :account }
+  let(:log)           { double :log }
   let(:transaction1)  { double :transaction }
   let(:transaction2)  { double :transaction }
   let(:transaction3)  { double :transaction }
 
   before :each do
 
-    allow(account).to receive(:transactions).and_return([transaction1, transaction2, transaction3])
+    allow(account).to receive(:log).and_return(log)
+    allow(log).to receive(:history).and_return([transaction1, transaction2, transaction3])
 
     allow(transaction1).to receive(:date).and_return('10/01/2012')
     allow(transaction1).to receive(:credit).and_return(1000.00)
