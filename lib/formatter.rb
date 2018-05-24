@@ -1,4 +1,4 @@
-module Formatter
+class Formatter
 
   HEADER = "date || credit || debit || balance\n"
 
