@@ -1,6 +1,6 @@
 # Bank tech test
 
-A tech test which replicates the workings of a simple bank account. I wrote this test in object-oriented Ruby, encapsulating three classes for account, transaction, printer and formatter. This ensures that objects have separate concerns, and can be passed into one another to pass their information up to other objects.
+A tech test which replicates the workings of a simple bank account. I wrote this test in object-oriented Ruby, encapsulating three classes for account, transaction, transaction log, printer and formatter. This ensures that objects have separate concerns, and can be passed into one another to pass their information up to other objects.
 
 ### Installation
 
@@ -14,14 +14,14 @@ A tech test which replicates the workings of a simple bank account. I wrote this
 * To create an account, create a variable set to `account.new`. You can pass in an argument with a number to initialize the account with an opening balance.
 * To check your balance, run `.balance` on your account
 * To log a transaction, use the `.log_transaction` method. You need to pass it three arguments in order: the date (as a string), a credit value, and a debit value. If crediting, you will probably want to set the debit to nil, and vice versa. For example, to input a credit of 500 on New Year's day 2018, run `.log_transaction(01/01/2018, 500, nil)` on your account variable.
-* To print your log of transactions, initialize a new printer object. Run `.print` on your printer object, passing in your account as an argument, and it will output a log of all the transactions made.
+* You can access your history of transactions by passing `.log.history` on your account; this will return an array of Transaction objects with the details of each transaction.
+* To print your log of transactions, initialize a new printer object. Run `.print` on your printer object, passing in your `account.log.history` as an argument, and it will output a log of all the transactions made.
 
-![screenshot](https://user-images.githubusercontent.com/35489501/40368075-d6cf8c9e-5dd2-11e8-82de-bb671d26e300.png)
+![screenshot](https://user-images.githubusercontent.com/35489501/40481151-6b10d9e6-5f48-11e8-8eea-ae0a847a4d58.png)
 
 ### Testing
 
-* To run unit tests, run `rspec` from the root folder
-* To run a feature test, run the `ruby './lib/feature_test.rb'`. This will load a file in which you can `printer.print` to see a result matching the acceptance criteria below.
+Tests are included in the `spec` folder. To run them, run `rspec` from the root folder. There are unit tests for each class, and a feature test which adds the three transactions in the below spec to a created account and prints a statement, checking it against the specification.
 
 ## Original requirements
 

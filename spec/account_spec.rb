@@ -23,11 +23,11 @@ describe Account do
   end
 
   it 'should update the balance when adding a credit' do
-    expect{ account.log_transaction('10/01/2012', 1000, nil) }.to change { account.balance }.by(1000)
+    expect { account.log_transaction('10/01/2012', 1000, nil) }.to change { account.balance }.by(1000)
   end
 
   it 'should update the balance when adding a debit' do
-    expect{ account.log_transaction('14/01/2012', nil, 500) }.to change { account.balance }.by(-500)
+    expect { account.log_transaction('14/01/2012', nil, 500) }.to change { account.balance }.by(-500)
   end
 
 end
